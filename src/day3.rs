@@ -7,9 +7,9 @@ fn part1(ns: &[String]) -> i64 {
     for i in 0..ns[0].len() {
         let c = ns.iter().filter(|s| s.as_bytes()[i] == b'0').count();
         if c > ns.len() / 2 {
-            epsilon += e;
+            epsilon |= e;
         } else {
-            gamma += e;
+            gamma |= e;
         }
         e >>= 1;
     }
